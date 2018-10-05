@@ -1,2 +1,6 @@
 # antibias
 functions for countering subject bias in behavioral training
+
+This respository contains MATLAB code for countering subject-specific bias in behavioral training. It is intended to be used in behavioral neuroscience studies in which an animal subject is trained to associate specific stimuli with specific choices - the typical paradigm is two-alternative forced-choice, as outlined in [(Carandini and Churchland, 2013)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4105200/). Often, when being trained on these studies, subjects ignore the stimuli and make predictable patterns of choices instead - for instance, they may always choose to push one particular button, regardless of the stimulus. This prevents them from learning the stimulus-choice association. To solve this problem, one strategy is to take an adversarial approach: attempt to infer whether the subject is following a predictable strategy, and set future trials so that the subject will fail if it makes the predictable choice.
+
+The antibias function provided here implements this adversarial approach. It attempts to predict the subjects' future choice based on previous choice history, and then sets up a future trial that will counteract any predictable strategy.
